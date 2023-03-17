@@ -8,8 +8,17 @@ class Node:
 class linkedList:
     
     def __init__(self):
-      self.head = None
-      self.tail = None
+        self.head = None
+        self.tail = None
+
+    def get(self,index):
+        try:
+            node = self.head
+            for i in range(index):
+                node = node.next
+            return node.data
+        except AttributeError:
+            print("GET ERROR: Index out of range")
     
     def pushback(self, data):
         newNode = Node(data)
@@ -19,6 +28,15 @@ class linkedList:
         else:
             self.tail.next = newNode
             self.tail = newNode
+
+    def pushfront(self, data):
+        newNode = Node(data)
+        if self.head == None:
+            self.head = newNode
+            self.tail = newNode
+        else:
+            newNode.next = self.head
+            self.head = newNode
 
     def popback(self):
         if self.tail is None:
@@ -32,7 +50,6 @@ class linkedList:
             self.tail = current_node
             return temp
 
-
     def print(self):
         if self.head is None:
             print("ERROR: Empty list")
@@ -44,4 +61,6 @@ class linkedList:
                 else:
                     print(current_node.data, end=" ")
                 current_node = current_node.next
+
+
 

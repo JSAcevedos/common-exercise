@@ -62,5 +62,11 @@ class linkedList:
                     print(current_node.data, end=" ")
                 current_node = current_node.next
 
-
+list1 = input().split()
+list2 = input().split()
+linked1 = linkedList()
+linked2 = linkedList()
+length = len(list1)
+listResult1 = linkedList()
+listResult2 = linkedList()
 

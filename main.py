@@ -72,13 +72,14 @@ listResult2 = linkedList()
 
 for i in range(length):
     linked1.pushback(list1[i])
-    linked2.pushback(list2[i])
+    linked2.pushback(list2[length - i - 1])
 
 for i in range(length):
-    if linked1.head.data !=  linked2.get(length - i - 1):
+    if linked1.head.data !=  linked2.head.data:
         listResult1.pushback(linked1.head.data)
-        listResult2.pushfront(linked2.get(length - i - 1))
+        listResult2.pushfront(linked2.head.data)
     linked1.head = linked1.head.next
+    linked2.head = linked2.head.next
 
 listResult1.print()
 print()

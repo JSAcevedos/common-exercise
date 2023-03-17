@@ -75,10 +75,10 @@ for i in range(length):
     linked2.pushback(list2[i])
 
 for i in range(length):
-    if linked1.get(i) !=  linked2.get(length - i - 1):
-        listResult1.pushback(linked1.get(i))
+    if linked1.head.data !=  linked2.get(length - i - 1):
+        listResult1.pushback(linked1.head.data)
         listResult2.pushfront(linked2.get(length - i - 1))
-        print(linked2.get(length - i - 1))
+    linked1.head = linked1.head.next
 
 listResult1.print()
 print()

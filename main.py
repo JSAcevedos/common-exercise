@@ -70,3 +70,7 @@ length = len(list1)
 listResult1 = linkedList()
 listResult2 = linkedList()
 
+for i in range(length):
+    linked1.pushback(list1[i])
+    linked2.pushback(list2[i])
+
